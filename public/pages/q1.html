@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SBO Survey | Response</title>
+
+        <meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.7.7/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.7.7/survey.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css">
+
+    </head>
+    <body>
+
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        
+
+         
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-functions.js"></script>
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDc2Rib4GOI_zssK_gLlSZqPiJ_uVt1t94",
+          authDomain: "sboappadminpanel.firebaseapp.com",
+          databaseURL: "https://sboappadminpanel.firebaseio.com",
+          projectId: "sboappadminpanel",
+          storageBucket: "sboappadminpanel.appspot.com",
+          messagingSenderId: "791504859997",
+          appId: "1:791504859997:web:5f559c6d1a6ae7f8f2eeb4",
+          measurementId: "G-GJ0HQG8WE2"
+        };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+          var storage = firebase.storage();
+          var firestore = firebase.firestore();
+          const auth = firebase.auth();
+          const functions = firebase.functions();
+          
+            </script>
+             <!-- GeoFirestore -->
+          <script src="https://unpkg.com/geofirestore@3.2.3/dist/geofirestore.js"></script>
+          
+            
+    <script type="text/javascript" src="./index.js"></script>
+
+    </body>
+</html>

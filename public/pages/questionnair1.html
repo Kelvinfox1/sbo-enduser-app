@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/styles.css" />
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../images/icons/icon-192x192.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f78181"/>
+    <meta name="description" content="An offline app for consumer trend research.">
+    <title>Survey Template</title>
+    <style>
+        body{
+      
+       font-size:small;
+       font-family: Arial, Helvetica, sans-serif;
+     }
+       header, main, footer {
+     padding-left: 240px;
+   }
+
+   @media only screen and (max-width : 992px) {
+     header, main, footer {
+       padding-left: 0;
+     }
+   }
+  
+
+   </style>
+</head>
+<body  class="grey lighten-4">
+    <header>
+        <nav class="top-nav">
+            <div class="container">
+                <div class="nav-wrapper" style="text-align: center;">
+                   <a class="page-title" >User</a>
+                   <a href="#!" class="waves-effect right"  data-activates='dropdown1'><i class="material-icons left">account_circle</i><span id="accountDetails"></span></a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!"><i class="material-icons">account_circle</i>Profile</a></li>
+                            <li><a href="#!" id="logout"><i class="material-icons">exit_to_app</i>Logout</a></li>
+                        </ul>
+                   <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons left">menu</i></a>
+                </div>
+            </div>
+        </nav>
+        <ul id="nav-mobile" class="side-nav fixed">
+            <img src="../images/sbologo.png" alt="" style="margin-top: 10%;" width="80%">
+                <li><div class="divider"></div></li>
+                <br>
+                <li><a href="./questionnair.html" class="waves-effect">
+                   <i class="material-icons">home</i>Home</a></li>
+                <li><a href="./notification.html" class="waves-effect">
+                    <i class="material-icons">notifications_active</i>Notifications</a></li>
+                <li><a href="./help.html" class="waves-effect">
+                    <i class="material-icons">help</i>help</a></li>
+                <li><a href="./contact.html" class="waves-effect">
+                    <i class="material-icons">contact_phone</i>contact Admin</a></li>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="black-text">
+                        <form id="data">
+                            <div id="location">
+                                <p>Q1. Enable location on device and click below icon to capture location coordinates</p>
+                                    <a id = "find-me" class="waves-effect waves-light btn">Location <i class="material-icons right">location_on</i></a>
+                                <div id="log"></div>
+                                <div id="lat"></div>
+                                <div id="long"></div>
+                                <br>
+                                <br>
+                            </div>
+            
+                            <div id="stock">
+                                <p>Q2. In Which month of the year were you born</p>
+                                <input type="text" class="datepicker" name="date" id="date">
+                                 <br>
+                                 <br>  
+                            </div>
+                        
+                            <div class="box shadow1">
+                                <p>Q3. What is your current ocupation</p>
+                                <input placeholder="current ocupation" id="first_name" type="text" class="validate">
+                                <label for="first_name">ocupation</label>                               
+                                <br>
+                                <br>
+                            </div>
+                        
+                            <div class="box shadow1">
+                                <p>Q4. In Which Constituency do you currently live in </p>
+                                <input placeholder="constituency" id="first_name" type="text" class="validate">
+                                <label for="first_name">constituency</label>  
+                                <br>
+                            </div>
+                        
+                            <div class="box shadow1">
+                                <p>Q5. Which of the following product have you used in the past 30 days?</p>
+                                <input type="checkbox" id="beer" class="messageCheckbox" name="products" value="Manufactured branded beer" />
+                                <label for="beer"> Manufactured branded beer</label><br>
+                                <input type="checkbox" id="spirit" class="messageCheckbox" name="products" value="Manufactured Spirit">
+                                <label for="spirit"> Manufactured Spirit</label><br>
+                                <input type="checkbox" id="cigarettes" class="messageCheckbox" name="products" value="cigarettes">
+                                <label for="cigarettes"> cigarettes</label><br>
+                                <br>
+                            </div>
+                        
+                            <div class="box shadow1">
+                                <p>Q6. Do you smoke at least one cigarette per day</p>
+                                <input type="radio" id="yes" name="no_of_cigarette" value="yes"/>
+                                <label for="yes">YES</label><br>
+                                <input type="radio" id="no" name="no_of_cigarette" value="no"/>
+                                <label for="no">NO</label>
+                            </div>
+                        
+                            <div class="box shadow1">
+                                <p>Q7. Which brand of cigarette do you smoke nowadays? PROBE: Any others?.</p>
+                                <p>Q8. Which one brand of cigarette do you currently smoke most often, that is, more than any other brand?</p>
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>Q7</th>
+                                        <th>Q8</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Dunhill Switch</td>
+                                        <td><input type="checkbox" name="brand" id="dunhill_switch" value="Dunhill Switch"><label for="dunhill_switch"></label></td>
+                                        <td><input type="radio" name="brand" id="dunhill" value="Dunhill Switch"><label for="dunhill"></label></td>                                      
+                                    </tr>
+                                    <tr>
+                                        <td>Dunhill Double Capsule</td>
+                                       <td><input type="checkbox" name="brand" id="dunhill_capsule" value="Dunhill Double Capsule"><label for="dunhill_capsule"></label></td>
+                                       <td><input type="radio" name="brand" id="capsule" value="Dunhill Double Capsule"><label for="capsule"></label></td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>Embassy Light</td>
+                                       <td><input type="checkbox" name="brand" id="embassy" value="Embassy Light"><label for="embassy"></label></td>
+                                        <td><input type="radio" name="brand" id="embassy_light" value="Embassy Light"><label for="embassy_light"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sportman Core</td>
+                                       <td><input type="checkbox" name="brand" id="sportman" value="Sportman Core"><label for="sportman"></label></td>
+                                       <td><input type="radio" name="brand" id="sport" value="Sportman Core"><label for="sport"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rothmans Switch</td>
+                                       <td><input type="checkbox" name="brand" id="rothman" value="Rothman Switch"><label for="rothman"></label></td>
+                                       <td><input type="radio" name="brand" id="switch" value="Rothman Switch"><label for="switch"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pall Mall Kings</td>
+                                       <td><input type="checkbox" name="brand" id="pallmall" value="Pall Mall Kings"><label for="pallmall"></label></td>
+                                       <td><input type="radio" name="brand" id="pall" value="Pall Mall Kings"><label for="pall"></label></td>
+                                    <tr>
+                                        <td>Pall Mall Plus</td>
+                                        <td><input type="checkbox" name="brand" id="pallmall_plus" value="Pall Mall Plus"><label for="pallmall_plus"></label></td>
+                                        <td><input type="radio" name="brand" id="pallplus" value="Pall Mall Plus"><label for="pallplus"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rooster</td>
+                                       <td><input type="checkbox" name="brand" id="rooster" value="Rooster"><label for="rooster"></label></td>
+                                       <td><input type="radio" name="brand" id="roster" value="Rooster"><label for="roster"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Supermatch Kings</td>
+                                        <td><input type="checkbox" name="brand" id="supermatch" value="Supermatch Kings"><label for="supermatch"></label></td>
+                                        <td><input type="radio" name="brand" id="kings" value="Supermatch Kings"><label for="kings"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SM by Rothmans</td>
+                                        <td><input type="checkbox" name="brand" id="sm" value="Sm by Rothmans"><label for="sm"></label></td>
+                                        <td><input type="radio" name="brand" id="SmR" value="sm by Rothmans"><label for="SmR"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other (Specify)</td>
+                                       <td><input type="checkbox" name="brand" id="others" value="Others"><label for="others"></label></td>
+                                       <td><input type="radio" name="brand" id="specify" value="Others"><label for="specify"></label></td>
+                                    </tr>
+                                </table>
+                        
+                            </div>
+                            <div>
+                                <p>Q9. When did you last buy(Ask for each brand q7)?</p>
+                                <div id="Q9">
+
+                                </div>
+                                
+                            </div>
+                            <div>
+                                <p>Q10. What was the quantity of (each brand at Q6 Smoked in the last 2 weeks at Q8)</p>
+                                <div id="Q10">
+
+                                </div>
+                            </div>
+                            <div>
+                                <p>Q11. How much money in total did you pay for the (Mentioned Quantity Bought At Q10)of (Mention Brand at Q7) you bought in the last instance </p>
+                                <input type="text" name="" id="">
+                            </div>
+                            <div>
+                                <p>Q12. In What type of Outlet was it from?</p>
+                               <input type="radio" name="Outlet" id="kiosk" value="kiosk">
+                               <label for="kiosk">kiosk</label><br>
+                               <input type="radio" name="Outlet" id="Hawker" value="hawker">
+                               <label for="Hawker">Hawker</label><br>
+                               <input type="radio" name="Outlet" id="Duka" value="Duka">
+                               <label for="Duka">Duka</label><br>
+                               <input type="radio" name="Outlet" id="Supermarket" value="Supermarket">
+                               <label for="Supermarket">Super/Min-Super Market</label><br>
+                               <input type="radio" name="Outlet" id="Petrol" value="Petrol Station Shop">
+                               <label for="Petrol">Petrol Station Shop</label><br>
+                               <input type="radio" name="Outlet" id="Entertainment" value="Entertainment outlet anyother">
+                               <label for="Entertainment">Entertainment outlet anyother</label>
+                            </div>
+                            <input type="text" name="when" id="">
+
+
+                        </form>
+                       
+                           <div class="box shadow1">
+                                <button id="saveButton" class="button">save</button>
+                                <br>
+                                <br>
+                           </div>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+      
+        </div>
+    </main>
+  
+    <!-- RSVP -->
+    <script src="https://cdn.jsdelivr.net/npm/rsvp@4/dist/rsvp.min.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
+
+  
+   <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script> 
+  <script>
+    // Initialize collapse button
+    $('.button-collapse').sideNav({
+  menuWidth: 300, // Default is 300
+  edge: 'left', // Choose the horizontal origin
+  closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  draggable: true, // Choose whether you can drag to open on touch screens
+}
+);
+$('.waves-effect').dropdown({
+  inDuration: 300,
+  outDuration: 225,
+  constrainWidth: true, // Does not change width of dropdown to that of the activator
+  hover: true, // Activate on hover
+  gutter: 0, // Spacing from edge
+  belowOrigin: true, // Displays dropdown below the button
+  alignment: 'left', // Displays dropdown with edge aligned to the left of button
+  stopPropagation: false // Stops event propagation
+}
+);
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false, // Close upon selecting a date,
+    container: undefined // ex. 'body' will append picker to body
+  });
+</script>
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDc2Rib4GOI_zssK_gLlSZqPiJ_uVt1t94",
+      authDomain: "sboappadminpanel.firebaseapp.com",
+      databaseURL: "https://sboappadminpanel.firebaseio.com",
+      projectId: "sboappadminpanel",
+      storageBucket: "sboappadminpanel.appspot.com",
+      messagingSenderId: "791504859997",
+      appId: "1:791504859997:web:5f559c6d1a6ae7f8f2eeb4",
+      measurementId: "G-GJ0HQG8WE2"
+    };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var storage = firebase.storage();
+      var firestore = firebase.firestore();
+      const auth = firebase.auth();
+        </script>
+        <!-- GeoFirestore -->
+  <script src="https://unpkg.com/geofirestore@3.2.3/dist/geofirestore.js"></script>
+        <script type="text/javascript" src="../js/authstate.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/questionnair.js"></script>
+</body>
+</html>

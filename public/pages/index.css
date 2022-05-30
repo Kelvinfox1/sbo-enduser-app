@@ -1,0 +1,7 @@
+.sv_main {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sv_main .sv_container .sv_body .sv_p_root .sv_page_title .sv_title {
+  font-size: 0.1em;
+}

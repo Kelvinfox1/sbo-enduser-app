@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./images/icons/icon-192x192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f78181"/>
+  <meta name="description" content="An offline app for consumer trend research.">
+  <title>Sbo Survey</title>
+  <style>
+    body{
+      background-image: url('./images/Login – 1.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-size:small;
+      font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    
+    }
+    .container  {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+}
+
+.container .row {
+margin: 0 auto;
+}
+.box h3 {
+text-align:center;
+  position:relative;
+  top:80px;
+}
+.box {
+  width:95%;
+  height:70px;
+  background:#FFF;
+  margin:40px auto;
+}
+
+/*=========================================
+* Effect 7
+=========================================*/
+.effect7 {
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.effect7:after {
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+     -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+       -o-transform:skew(8deg) rotate(3deg);
+          transform:skew(8deg) rotate(3deg);
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row valign-wrapper ">
+      <div class="col s12 m12 l12 xl12 offset-s0 valign">
+        <div class="card darken-5 z-depth-5 grey lighten-2">
+          <div class="card-content black-text">
+            <span class="card-title center-align purple-text text-darken-4">SBO-RESEARCH</span>
+            <p>Welcome back please sign in to continue .</p>
+            <form id="login-form">
+            <div class="row box effect7">
+              <div class="input-field col s12 m12 l12 xl12">
+                <i class=" material-icons prefix">mail_outline</i>
+                <input id="login-email" type="email" class="validate" required/>
+                <label for="login-email">Email</label>
+              </div>
+            </div>
+            <br/>
+            <div class="row box effect7">
+              <div class="input-field col s12 m12 l12 xl12">
+                <i class="material-icons prefix ">lock_outline</i>
+                <input id="login-password" type="password" class="validate" required/>
+                <label for="login-password">Password</label>
+              </div>
+            </div>
+            <br/>
+            <div class="row box effect7">
+              <div class="input-field col s12 m12 l12 xl12">
+                <i class="material-icons prefix ">fiber_pin</i>
+                <input type="text" id="project-code" class="validate" required/>
+                <label for="project-code">Project Code</label>
+              </div>
+            </div>
+            <br/>
+            <p class="center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Log In
+                <i class="material-icons right">send</i>
+              </button>
+            </p>
+            <a href="#modal-signup" class="grey-text modal-trigger" >Sign up</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SIGN UP MODAL -->
+<div id="modal-signup" class="modal">
+  <div class="modal-content">
+    <h4>Sign up</h4><br />
+    <form id="signup-form">
+      <div class="input-field">
+        <input type="text" id="signup-name" required />
+        <label for="signup-name">Full Name</label>
+      </div>
+      <div class="input-field">
+        <input type="email" id="signup-email" required />
+        <label for="signup-email">Email address</label>
+      </div>
+      <div class="input-field">
+        <input type="password" id="signup-password" required />
+        <label for="signup-password">Choose password</label>
+      </div>
+      <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyDc2Rib4GOI_zssK_gLlSZqPiJ_uVt1t94",
+  authDomain: "sboappadminpanel.firebaseapp.com",
+  databaseURL: "https://sboappadminpanel.firebaseio.com",
+  projectId: "sboappadminpanel",
+  storageBucket: "sboappadminpanel.appspot.com",
+  messagingSenderId: "791504859997",
+  appId: "1:791504859997:web:4f12cf77b081a2ddf2eeb4",
+  measurementId: "G-PXTTHK0LD0"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  // make auth and firestore references 
+  const auth = firebase.auth();
+  const firestore = firebase.firestore();
+
+</script>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/auth.js"></script>
+  
+  <script>
+  if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('service worker registered'))
+    .catch(err => console.log('service worker not registered', err));
+}
+  </script>
+</body>
+</html>

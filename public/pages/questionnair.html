@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../css/styles.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/survey-jquery@1.9.32/survey.jquery.min.js"></script>
+  <link href="https://unpkg.com/survey-core@1.9.32/modern.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css"
+    rel="stylesheet" />
+  <script src="https://sboappadminpanel.web.app/js/widget.js"></script>
+  <script src="https://unpkg.com/surveyjs-widgets@1.9.32/surveyjs-widgets.min.js"></script>
+  <link rel="apple-touch-icon" href="../images/icons/icon-192x192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f78181" />
+  <meta name="description" content="An offline app for consumer trend research.">
+  <title>Survey Template</title>
+  <style>
+    .sv_main {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .sv_main .sv_container .sv_body .sv_p_root .sv_page_title .sv_title {
+      font-size: 0.1em;
+    }
+
+    body {
+
+      font-size: small;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header,
+    main,
+    footer {
+      padding-left: 240px;
+    }
+
+    @media only screen and (max-width : 992px) {
+
+      header,
+      main,
+      footer {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="grey lighten-4">
+  <header>
+    <nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper" style="text-align: center;">
+          <a class="page-title">User</a>
+          <a href="#!" class="waves-effect right" data-activates='dropdown1'><i
+              class="material-icons left">account_circle</i><span id="accountDetails"></span></a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!"><i class="material-icons">account_circle</i>Profile</a></li>
+            <li><a href="#!" id="logout"><i class="material-icons">exit_to_app</i>Logout</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i
+              class="material-icons left">menu</i></a>
+        </div>
+      </div>
+    </nav>
+    <ul id="nav-mobile" class="side-nav fixed">
+      <img src="../images/sbologo.png" alt="" style="margin-top: 10%;" width="80%">
+      <li>
+        <div class="divider"></div>
+      </li>
+      <br>
+      <li><a href="./questionnair.html" class="waves-effect">
+          <i class="material-icons">home</i>Home</a></li>
+      <li><a href="./notification.html" class="waves-effect">
+          <i class="material-icons">notifications_active</i>Notifications</a></li>
+      <li><a href="./help.html" class="waves-effect">
+          <i class="material-icons">help</i>help</a></li>
+      <li><a href="./contact.html" class="waves-effect">
+          <i class="material-icons">contact_phone</i>contact Admin</a></li>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div id="changes">
+            <p class="caption">
+            <h5 class="center-align"> Click The button below to Capture Data</h5>
+            </p>
+            <div>
+              <a class="waves-effect waves-light btn" id="newSurveyButton"
+                style="display: block;margin-left: auto;margin-right: auto;width: 70%;"><i
+                  class="material-icons left">note_add</i>New Survey</a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+  <footer class="page-footer">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="../images/4.svg" style="display: block;margin-left: auto;margin-right: auto;width: 20%;">
+      </div>
+      <div class="mySlides fade">
+        <img src="../images/5.svg" style="display: block;margin-left: auto;margin-right: auto;width: 20%;">
+      </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2020 SBO Research, All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/rsvp@4/dist/rsvp.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
+
+
+  <!--Import jQuery before materialize.js-->
+
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
+  <script src=" https://formbuilder.online/assets/js/form-render.min.js"></script>
+
+
+
+  <script>
+    // Initialize collapse button
+    $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens
+    });
+    $('.waves-effect').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: true, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    });
+  </script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDc2Rib4GOI_zssK_gLlSZqPiJ_uVt1t94",
+      authDomain: "sboappadminpanel.firebaseapp.com",
+      databaseURL: "https://sboappadminpanel.firebaseio.com",
+      projectId: "sboappadminpanel",
+      storageBucket: "sboappadminpanel.appspot.com",
+      messagingSenderId: "791504859997",
+      appId: "1:791504859997:web:5f559c6d1a6ae7f8f2eeb4",
+      measurementId: "G-GJ0HQG8WE2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var storage = firebase.storage();
+    var firestore = firebase.firestore();
+    const auth = firebase.auth();
+  </script>
+  <!-- GeoFirestore -->
+  <script src="https://unpkg.com/geofirestore@3.2.3/dist/geofirestore.js"></script>
+  <script type="text/javascript" src="../js/authstate.js"></script>
+
+  <!-- <script type="text/javascript" src="../js/auth.js"></script> -->
+  <script src="../js/q.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.collapsible').collapsible();
+    });
+  </script>
+
+
+</body>
+
+</html>
